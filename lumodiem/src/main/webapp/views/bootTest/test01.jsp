@@ -43,7 +43,65 @@
 			<%-- <c:url value="/views/include/nav.jsp" var="nav"/>
 			<c:import url="${nav}"/> --%>
 			<!-- c태그 이상시 아래의 include 태그 활성화 -->
-			<%@ include file="/views/include/nav.jsp" %>
+			<%-- <%@ include file="/views/include/nav.jsp" %> --%>
+			<nav id="colorlib-main-menu" role="navigation">
+	<ul>
+		<li class="colorlib-active">
+			<a href="/">홈</a>
+		</li>
+		<li>
+			<a href="/klassBoard">클래스 게시판</a>
+		</li>
+		<li>
+			<a href="/reviewBoard">리뷰 게시판</a>
+		</li>
+		<c:choose>
+			<c:when test="${empty account}">
+				<li>
+					<a href="/accountCreateSelect">회원가입</a>
+				</li>
+				<li>
+					<a href="/login">로그인</a>
+				</li>
+				<li>
+					<a>게스트</a>
+				</li>
+			</c:when>
+			
+			<c:when test="${account.accountGrade eq  'M'}">
+				<li>
+					<a href="/memberMyPage">마이페이지</a>
+				</li>
+				<li>
+					<a>참여자</a>
+				</li>
+			</c:when>
+			
+			<c:when test="${account.accountGrade eq 'H' }">
+				<li>
+					<a href="/hostMyPage">마이페이지</a>
+				</li>
+				<li>
+					<a>주최자</a>
+				</li>
+			</c:when>
+			
+			<c:when test="${account.accountGrade eq 'A' }">
+				<li>
+					<a href="/adminPage">관리자 페이지</a>
+				</li>
+				<li>
+					<a>관리자</a>
+				</li>
+			</c:when>
+		</c:choose>
+		<c:if test="${not empty account}">
+				<li>
+					<a href="/logout">로그아웃</a>
+				</li>
+		</c:if>
+	</ul>
+</nav>
 			
 			
 			<!-- 왼쪽 네비게이션바 -->
@@ -82,7 +140,10 @@
 								
 								
 									<!-- (게시판 작성할때 한 줄이라고 생각 하면 됨!) -->
-									<div class="col-md-12">
+									<div class="col-md-12 ">
+									<div class="mfp-title">
+										Title 위치
+									</div>
 										<div class="blog-entry ftco-animate d-md-flex">
 											<a href="single.html" class="img img-2" style="background-image: url();"><img alt="뚱이" src=""></a>
 											<div class="text text-2 pl-md-4">
