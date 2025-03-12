@@ -7,22 +7,22 @@
 <title>작성 리뷰 조회</title>
 <style>
     .list-group-item a {
-        color: #000 !important; 
-        text-decoration: none; 
+        color: #000 !important;  /* 글자 색상 검은색 강제 변경 */
+        text-decoration: none;   /* 링크 밑줄 제거 */
     }
 
     h3.text-primary {
-        color: #000 !important;
+        color: #000 !important;  /* "마이페이지" 글자 검은색 */
     }
 
     .list-group-item {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #ddd; /* 밑줄 추가 */
         display: flex;
-        align-items: center; 
+        align-items: center; /* 세로 정렬 */
     }
 
     .list-group-item .badge {
-        margin-left: auto; 
+        margin-left: auto; /* "+" 기호만 우측 정렬 */
     }
     
     
@@ -31,7 +31,7 @@
     
 	table {
 	    border: 1px solid #ddd !important;
-	    border-spacing: 0 10px !important; 
+	    border-spacing: 0 10px !important; /* 간격을 더 넓게 조정 */
 	    border-collapse: separate !important; 
 	}
 	th{
@@ -52,25 +52,25 @@
 	}
 
     .clickable-row:hover {
-	    background-color: #D1B5E0; 
-	    cursor: pointer;          
+	    background-color: #D1B5E0; /* 마우스 오버 시 색상 변경 */
+	    cursor: pointer;           /* 커서를 포인터로 변경 */
 	}
     a.btn-outline-danger {
-	    background-color: #F1948A !important;
-	    color: #fff !important;               
-	    border: none;                        
+	    background-color: #F1948A !important;  /* 배경색 강제 적용 */
+	    color: #fff !important;                /* 글자 색상 강제 적용 */
+	    border: none;                          /* 부트스트랩의 기본 테두리 제거 */
 	}
     a.btn-outline-primary {
-	    background-color: #E8DAEF !important; 
-	    color: #4A235A !important;               
-	    border: none;                        
+	    background-color: #E8DAEF !important;  /* 배경색 강제 적용 */
+	    color: #4A235A !important;                /* 글자 색상 강제 적용 */
+	    border: none;                          /* 부트스트랩의 기본 테두리 제거 */
 	}
 	.mypage-box {
 	    background-color: #FFFFFF;
 	    border: 1px solid #ddd;
 	    border-radius: 10px;
 	    padding: 20px;
-	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
 	}
 
 	
@@ -116,12 +116,18 @@
 															<td>${startNo + vs.index + 1}</td>
 															<td>${list1.klassName}</td>
 															<td>${list1.accountNickname}</td>
-															<c:if test="${not empty reviewDTO }">
+															<c:if test="${not empty reviewDTO and reviewDTO[0].klassNo eq list1.klassNo }">
 																<td>${reviewDTO[0].reviewName}</td>
 															</c:if>
-															<c:if test="${empty reviewDTO }">
-																<td>(-)</td>
+															<c:if test="${not empty reviewDTO and reviewDTO[0].klassNo ne list1.klassNo }">
+																<td>(작성된 리뷰가 없습니다.)</td>
 															</c:if>
+															<c:if test="${empty reviewDTO }">
+																<td>(작성된 리뷰가 없습니다.)</td>
+															</c:if>
+															
+															
+															
 												        </tr>
 													</c:forEach>
 												</c:when>
@@ -131,6 +137,32 @@
 													</tr>
 												</c:otherwise>
 											</c:choose>							        
+												        <%-- <tr>
+												        	<td colspan="3">
+	        													<c:choose>
+																	<c:when test="${not empty reviewDTO }">
+																	<ul style="text-align: center;">
+																		<c:forEach var="list2" varStatus="vs2" items="${reviewDTO}">
+																			<c:if test="${list1.klassNo eq list2.klassNo }">
+																			<c:set var="check" value="false" />
+																				<li style="list-style-type: none;" class="clickable-row" data-url="<c:url value='/reviewDetail?review_no=${list2.reviewNo}'/>">
+																					${vs2.count}. 리뷰 제목 : ${list2.reviewName}
+																				</li>
+																			</c:if>
+																		</c:forEach>
+																	</ul>
+																	</c:when>
+																	<c:otherwise>
+																		<ul>
+																			<li>
+																				리뷰가 없습니다.
+																			</li>
+																		</ul>
+																	</c:otherwise>
+																</c:choose>
+												        	</td>
+												        	
+												        </tr> --%>
 								        </tbody>
 								    </table>
 								</li>
@@ -140,6 +172,7 @@
 									<c:if test="${not empty paging}">
 											
 										<c:if test="${paging.prev}">
+											<!-- c:url 사용해보자! -->
 											<c:url var="testUrl1" value="/memberMypageReview">
 												<c:param name="nowPage" value="${paging.pageBarStart - 1}"/>
 											</c:url>

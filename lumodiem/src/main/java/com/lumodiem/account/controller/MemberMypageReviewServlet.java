@@ -47,7 +47,8 @@ public class MemberMypageReviewServlet extends HttpServlet {
 				if(nowPage != null) {
 					option.setNowPage(Integer.parseInt(nowPage));
 				}
- 				
+				System.out.println("option : " + option);
+				
 				int totalData = new MypageService().reservationKlassListCount(option);
 				option.setTotalData(totalData);
 				request.setAttribute("paging", option);
@@ -76,12 +77,12 @@ public class MemberMypageReviewServlet extends HttpServlet {
 				}
 				request.setAttribute("beforeKlassList", beforeKlassList);
 				request.setAttribute("reviewDTO", reviewDTO);
-				for(int i = 0; i < beforeKlassList.size(); i++) {
-					System.out.println("beforeKlassList.getKlassDateNo : " + beforeKlassList.get(i).getKlassDateNo());
-				}
-				for(int i = 0; i < beforeKlassList.size(); i++) {
-					System.out.println("reviewDTO.getKlassDateNo : " + reviewDTO.get(i).getKlassDateNo());
-				}
+//				for(int i = 0; i < beforeKlassList.size(); i++) {
+//					System.out.println("beforeKlassList.getKlassDateNo : " + beforeKlassList.get(i).getKlassDateNo());
+//				}
+//				for(int i = 0; i < beforeKlassList.size(); i++) {
+//					System.out.println("reviewDTO.getKlassDateNo : " + reviewDTO.get(i).getKlassDateNo());
+//				}
 				
 				urlPath = request.getContextPath()+"/views/mypage/membermypagereview.jsp";
 				RequestDispatcher view = request.getRequestDispatcher(urlPath);
