@@ -24,7 +24,6 @@ public class DeleteReportKlassServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String temp = request.getParameter("klass_no");
-		System.out.println(temp);
 		int klassNo = 0;
 		if(temp!=null)klassNo = Integer.parseInt(temp);
 		int result = new ReportService().deleteReportKlass(klassNo);

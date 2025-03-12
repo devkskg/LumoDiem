@@ -35,7 +35,6 @@ public class HostBoardService {
 		int result = 0;
 		int klassResult = new HostBoardDao().deleteKlass(session, klassNo);
 		int attachResult = new HostBoardDao().deleteAttachOneByKlass(session, attachNo);		
-//				new HostBoardDao().deleteKlassOne(session,klass);
 		if(klassResult > 0 && attachResult > 0) {
 			result = 1;
 			session.commit();
@@ -56,7 +55,6 @@ public class HostBoardService {
 		// 클래스 예약일 delete -> insert
 		int deleteDateResult = new HostBoardDao().deleteDateOne(session,option);
 		int insertDateResult = new HostBoardDao().insertKlassDate(session,klassDate);
-		
 		// 저장되어있는 사진 지우기
 		int deleteAttachResult = new HostBoardDao().deleteAttachOne(session,atc);
 		// mapping 은 attach가 지워지면 지워지도록 되어있어서 따로 delete 안해줘도 된다.
@@ -78,7 +76,6 @@ public class HostBoardService {
 		int result = 0;
 		// 수정하면서 꼭 사용해야 할 메소드 3개 
 		int updateResult = new HostBoardDao().updateKlass(session, option);
-//		klassDate.setKlassNo(option.getKlassNo());
 		// klassNo 값의 klass_date 를 delete 후 insert 
 		int deleteDateResult = new HostBoardDao().deleteDateOne(session,option);
 		int insertDateResult = new HostBoardDao().insertKlassDate(session,klassDate);
@@ -90,7 +87,6 @@ public class HostBoardService {
 		int insertAttachResult = new HostBoardDao().insertKlassAttach(session,a);
 		m.setAttachNo(insertAttachResult);
 		// 추후 attach_no delete되면 mappin_no까지 같이 지워지는 작업 진행 되면 안써도 될 메소드임.
-//		int deleteMapResult = new HostBoardDao().deleteMappingOne(session,m);
 		int insertMapResult = new HostBoardDao().insertKlassMapping(session, m);
 		
 		if(updateResult > 0 && deleteDateResult >0 && insertDateResult > 0 
@@ -370,13 +366,6 @@ public class HostBoardService {
 		commitRollback(result, session);
 		return result;
 	}
-//	결제 실패
-//	public int deleteReservationOneRtoC(int resNo) {
-//		SqlSession session = getSqlSession();
-//		int result = new HostBoardDao().deleteReservationOneRtoC(session,resNo);
-//		commitRollback(result, session);
-//		return result;
-//	}
 //	예약 번호로 예약 정보 조회
 	public Reservation selectReservationOne(int resNo) {
 		SqlSession session = getSqlSession();

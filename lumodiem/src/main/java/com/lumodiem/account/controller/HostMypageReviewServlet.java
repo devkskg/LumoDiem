@@ -45,7 +45,6 @@ public class HostMypageReviewServlet extends HttpServlet {
 				if(nowPage != null) {
 					option.setNowPage(Integer.parseInt(nowPage));
 				}
-				System.out.println("option : " + option);
 				
 				int totalData = new MypageService().klassListCount(option);
 				option.setTotalData(totalData);

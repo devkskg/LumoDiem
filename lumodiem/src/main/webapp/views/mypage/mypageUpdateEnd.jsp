@@ -7,44 +7,44 @@
 <title>회원 정보 수정</title>
 <style>
     .list-group-item a {
-        color: #000 !important;  /* 글자 색상 검은색 강제 변경 */
-        text-decoration: none;   /* 링크 밑줄 제거 */
+        color: #000 !important; 
+        text-decoration: none;  
     }
 
     h3.text-primary {
-        color: #000 !important;  /* "마이페이지" 글자 검은색 */
+        color: #000 !important; 
     }
 
     .list-group-item {
-        border-bottom: 1px solid #ddd; /* 밑줄 추가 */
+        border-bottom: 1px solid #ddd; 
         display: flex;
-        align-items: center; /* 세로 정렬 */
+        align-items: center; 
     }
 
     .list-group-item .badge {
-        margin-left: auto; /* "+" 기호만 우측 정렬 */
+        margin-left: auto; 
     }
 
     .clickable-row:hover {
-	    background-color: #E8F7DC; /* 마우스 오버 시 색상 변경 */
-	    cursor: pointer;           /* 커서를 포인터로 변경 */
+	    background-color: #E8F7DC; 
+	    cursor: pointer;           
 	}
     a.btn-outline-danger {
-	    background-color: #F0F2EF !important;  /* 배경색 강제 적용 */
-	    color: #000000 !important;                /* 글자 색상 강제 적용 */
-	    border: 1px solid #ccc !important;                  /* 부트스트랩의 기본 테두리 제거 */
+	    background-color: #F0F2EF !important;  
+	    color: #000000 !important;              
+	    border: 1px solid #ccc !important;               
 	}
     a.btn-outline-primary {
-	    background-color: #E8DAEF !important;  /* 배경색 강제 적용 */
-	    color: #4A235A !important;                /* 글자 색상 강제 적용 */
-	    border: none;                          /* 부트스트랩의 기본 테두리 제거 */
+	    background-color: #E8DAEF !important; 
+	    color: #4A235A !important;                
+	    border: none;                        
 	}
 	.mypage-box {
 	    background-color: #FFFFFF;
 	    border: 1px solid #ddd;
 	    border-radius: 10px;
 	    padding: 20px;
-	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
 	}
 	.btn-outline-primary {
 	    color: #ffffff !important;
@@ -62,43 +62,6 @@
 	<%@ include file="/views/include/nav.jsp"%>
 	
 	
-	<%-- <div id="colorlib-main">
-		<section class="ftco-section ftco-no-pt ftco-no-pb">
-			<div class="container">
-				<div class="row d-flex">
-					<div class="col-xl-8 py-5 px-md-5">
-						<div class="row pt-md-4">
-						
-							<form name="update_member_form" action="">
-								
-								<!-- <span>입력하신 비밀번호로 변경됩니다.</span><br> -->
-								<!-- <label for="account_pw"> 새로운 비밀번호 : </label><input name="account_pw" id="account_pw" type="password"><br> -->
-								<!-- <label for="account_pw_check">비밀번호 확인 : </label><input name="account_pw_check" id="account_pw_check" type="password"> -->
-								<!-- <span class="dis" style="vertical-align: middle;"><ion-icon id="openEye" class="eye" name="eye-off-outline" size="large" style=""></span> -->
-								<br>
-								
-								<label for="account_nickname">닉네임 : </label><input name="account_nickname" id="account_nickname" type="text" value="${account.accountNickname }">
-								<button type="button" id="duplicate_nickname" name="duplicate_nickname" class="duplicate">중복확인</button> <br>
-								
-								<label for="account_phone">전화번호 : </label><input name="account_phone" id="account_phone" type="text" value="${account.accountPhone }">
-								<button type="button" id="duplicate_phone" name="duplicate_phone" class="duplicate">중복확인</button> <br>
-								
-								<label for="account_address">주소 : </label><input name="account_address" id="account_address" type="text" value="${account.accountAddress }"><br>
-								<label for="account_email">이메일 : </label><input name="account_email" id="account_email" type="text" value="${account.accountEmail }"><br>
-								
-								
-								<!-- <button type="button" id="submitBtn">회원정보 수정하기</button>
-								<a href="/" style="color: black"><button type="button">홈으로 돌아가기</button></a> -->
-							</form>
-						
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div> --%>
-			
-			
 	<div id="colorlib-main">	
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">

@@ -32,7 +32,6 @@ public class ApproveUpdateServlet extends HttpServlet {
 				.approveCode(approveCode)
 				.approveFb(approveFb)
 				.build();
-		System.out.println(approve);
 		int result = new ApproveSerview().updateApprove(approve);
 		JSONObject obj = new JSONObject();
 		obj.put("res_code", "500");

@@ -96,10 +96,6 @@ public class MemberBoardService {
 		int result = 0;
 		int review = new MemberBoardDao().deleteReview(session,reviewNo);
 		int attach = new MemberBoardDao().deleteAttach(session,attachNo);
-//		int mapping = new MemberBoardDao().deleteMapping(session,reviewNo);
-//		System.out.println("r : "+review);
-//		System.out.println("a : "+attach);
-//		System.out.println("m : "+mapping);
 		if(review > 0 && attach > 0 ) {
 			result = 1;
 			session.commit();

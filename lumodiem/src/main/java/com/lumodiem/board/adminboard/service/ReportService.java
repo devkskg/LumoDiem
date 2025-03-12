@@ -16,7 +16,7 @@ import com.lumodiem.board.hostboard.vo.Klass;
 
 public class ReportService {
 	ReportDao dao = new ReportDao();
-	
+
 	public int deleteReportReviewCmt(int reviewCmtNo) {
 		SqlSession session = getSqlSession();
 		int result = dao.deleteReportReviewCmt(reviewCmtNo, session);
@@ -24,15 +24,14 @@ public class ReportService {
 		session.close();
 		return result;
 	}
-	
-	public List<ReportReviewCmt> selectReportReviewCmtList(ReportReviewCmt option){
+
+	public List<ReportReviewCmt> selectReportReviewCmtList(ReportReviewCmt option) {
 		SqlSession session = getSqlSession();
-		List<ReportReviewCmt> resultList = dao.selectReportReviewCmtList(option,session);
+		List<ReportReviewCmt> resultList = dao.selectReportReviewCmtList(option, session);
 		session.close();
 		return resultList;
 	}
-	
-	/////////////////////////////////////////////
+
 	public int deleteReportReview(int reviewNo) {
 		SqlSession session = getSqlSession();
 		int result = dao.deleteReportReview(reviewNo, session);
@@ -40,30 +39,21 @@ public class ReportService {
 		session.close();
 		return result;
 	}
-	
+
 	public ReportReview selectReportReviewOne(ReportReview option) {
 		SqlSession session = getSqlSession();
-		option = dao.selectReportReviewOne(option,session);
+		option = dao.selectReportReviewOne(option, session);
 		session.close();
 		return option;
 	}
 
-	
-
-	public List<ReportReview> selectReportReviewList(ReportReview option){
+	public List<ReportReview> selectReportReviewList(ReportReview option) {
 		SqlSession session = getSqlSession();
-		List<ReportReview> resultList = dao.selectReportReviewList(option,session);
+		List<ReportReview> resultList = dao.selectReportReviewList(option, session);
 		session.close();
 		return resultList;
 	}
-	
-	
-//	public List<ReportKlass> selectReportKlassList (int reportKlassNo){
-//		SqlSession session = getSqlSession();
-//		List<ReportKlass> resultList = dao.selectReportKlassList(reportKlassNo, session);
-//		session.close();
-//		return resultList;
-//	}
+
 	public int deleteReportKlass(int klassNo) {
 		SqlSession session = getSqlSession();
 		int result = dao.deleteReportKlass(klassNo, session);
@@ -71,17 +61,17 @@ public class ReportService {
 		session.close();
 		return result;
 	}
-	
-	public ReportKlass selectReportKlassOne(ReportKlass klass ) {
+
+	public ReportKlass selectReportKlassOne(ReportKlass klass) {
 		SqlSession session = getSqlSession();
-		klass = dao.selectReportKlassOne(klass,session);
+		klass = dao.selectReportKlassOne(klass, session);
 		session.close();
 		return klass;
 	}
-	
-	public List<ReportKlass> selectReportKlassList (Klass option){
+
+	public List<ReportKlass> selectReportKlassList(Klass option) {
 		SqlSession session = getSqlSession();
-		List<ReportKlass> resultList = dao.selectReportKlassList(option,session);
+		List<ReportKlass> resultList = dao.selectReportKlassList(option, session);
 		session.close();
 		return resultList;
 	}
@@ -99,6 +89,5 @@ public class ReportService {
 		session.close();
 		return result;
 	}
-	
-	
+
 }

@@ -70,11 +70,7 @@ public class UpdateReviewEndServlet extends HttpServlet {
 					case"review_no":review.setReviewNo(Integer.parseInt(fileItem.getString("UTF-8")));
 									beforeImg = new MemberBoardService().selectAttachOneByReviewNo(Integer.parseInt(fileItem.getString("UTF-8")));
 									break;
-//					default : review.setReviewModDate(ldt.format(dtf));break;
 					}
-//					if(review.getResNo() == 0) {
-//						response.sendRedirect("/");
-//					}
 				}else {
 					if(fileItem.getSize() > 0) {
 						String oriName = fileItem.getName();

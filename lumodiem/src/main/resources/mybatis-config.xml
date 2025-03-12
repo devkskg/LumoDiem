@@ -1,83 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 무슨 의도로 만들어진 파일입니다~ 라는 뜻 -->
 <!DOCTYPE configuration
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-<!-- 환경설정 시작과 끝을 써주는 configuration -->
-<!-- 입력 순서가 매우 중요 태그 위에 마우스 호버하면 아래쪽에 순서 나온다. -->
 <configuration>
-	<!-- 하드코딩 말고 properties 쓰자 -->
-	<properties resource="driver.properties"/>
-	
-	<!-- 별칭 설정 -->
+	<properties resource="driver.properties" />
+
 	<typeAliases>
-		<!-- <typeAlias type="com.gn.board.vo.Board" alias="boardVo"/> -->
-		<typeAlias type="com.lumodiem.account.vo.Account" alias="accountVo"/>
-		
-		<typeAlias type="com.lumodiem.board.memberboard.vo.Review" alias="reviewVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewAttach" alias="reviewAttachVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.Reservation" alias="reservationVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewMapping" alias="reviewMappingVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.Klass" alias="klassVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewCmt" alias="commentVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassDate" alias="klassDateVo"/>
-		
-		<typeAlias type="com.lumodiem.board.adminboard.vo.ReportKlass" alias="reportKlassVo"/>
-		<typeAlias type="com.lumodiem.board.adminboard.vo.ReportReview" alias="reportReviewVo"/>
-		<typeAlias type="com.lumodiem.board.adminboard.vo.ReportReviewCmt" alias="reportReviewCmtVo"/>
-		
-		<typeAlias type="com.lumodiem.board.adminboard.vo.Approve" alias="approveVo"/>
-		
-		
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassLike" alias="klassLikeVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewLike" alias="reviewLikeVo"/>
-		
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewCmt" alias="reviewCmtVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassDate" alias="klassDateVo"/>
-		
-		<typeAlias type="com.lumodiem.account.vo.ReviewDTO" alias="ReviewDTOVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassAttach" alias="klassAttachVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassMapping" alias="klassMappingVo"/>
-		<typeAlias type="com.lumodiem.board.memberboard.vo.ReviewLike" alias="reviewLikeVo"/>
-		
-		<typeAlias type="com.lumodiem.board.hostboard.vo.Chat" alias="chatVo"/>
-		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassReport" alias="klassReportVo"/>
-		
-		<typeAlias type="com.lumodiem.common.payment.vo.PaymentDTO" alias="paymentDTOVo"/>
+		<typeAlias type="com.lumodiem.account.vo.Account"
+			alias="accountVo" />
+
+		<typeAlias type="com.lumodiem.board.memberboard.vo.Review"
+			alias="reviewVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewAttach"
+			alias="reviewAttachVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.Reservation"
+			alias="reservationVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewMapping"
+			alias="reviewMappingVo" />
+		<typeAlias type="com.lumodiem.board.hostboard.vo.Klass"
+			alias="klassVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewCmt" alias="commentVo" />
+		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassDate"
+			alias="klassDateVo" />
+
+		<typeAlias
+			type="com.lumodiem.board.adminboard.vo.ReportKlass"
+			alias="reportKlassVo" />
+		<typeAlias
+			type="com.lumodiem.board.adminboard.vo.ReportReview"
+			alias="reportReviewVo" />
+		<typeAlias
+			type="com.lumodiem.board.adminboard.vo.ReportReviewCmt"
+			alias="reportReviewCmtVo" />
+
+		<typeAlias type="com.lumodiem.board.adminboard.vo.Approve"
+			alias="approveVo" />
+
+
+		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassLike"
+			alias="klassLikeVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewLike"
+			alias="reviewLikeVo" />
+
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewCmt"
+			alias="reviewCmtVo" />
+		<typeAlias type="com.lumodiem.board.hostboard.vo.KlassDate"
+			alias="klassDateVo" />
+
+		<typeAlias type="com.lumodiem.account.vo.ReviewDTO"
+			alias="ReviewDTOVo" />
+		<typeAlias
+			type="com.lumodiem.board.hostboard.vo.KlassAttach"
+			alias="klassAttachVo" />
+		<typeAlias
+			type="com.lumodiem.board.hostboard.vo.KlassMapping"
+			alias="klassMappingVo" />
+		<typeAlias
+			type="com.lumodiem.board.memberboard.vo.ReviewLike"
+			alias="reviewLikeVo" />
+
+		<typeAlias type="com.lumodiem.board.hostboard.vo.Chat"
+			alias="chatVo" />
+		<typeAlias
+			type="com.lumodiem.board.hostboard.vo.KlassReport"
+			alias="klassReportVo" />
+
+		<typeAlias type="com.lumodiem.common.payment.vo.PaymentDTO"
+			alias="paymentDTOVo" />
 	</typeAliases>
-	
-	<!-- 연결하는 DB 설정 시작 -->
+
 	<environments default="development">
-		<!-- 하나하나의 DB 설정 / id는 DB 안의 내용과 관련없이 key느낌인듯 -->
 		<environment id="development">
-			<!-- 환경설정을 JDBC한테 맡기겠다. 라는 뜻 -->
-			<transactionManager type="JDBC"/>
-			<!-- DB정보 들어감. type은 pooled 연결 미리 만들기 + 설정항목많음, unpooled 연결 매번 새롭게 하기 + 여러개의 DB 참조할때 좋음 + 간단 -->
+			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-				<!-- Class.forName에 썼던 거네 -->
-				<property name="driver" value="${driver}"/>
-				<!-- Connection 연결 부분에서 썼던 거네 -->
-				<property name="url" value="${url}"/>
-				<property name="username" value="${username}"/>
-				<property name="password" value="${userpw}"/>
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${userpw}" />
 			</dataSource>
 		</environment>
 	</environments>
-	<!-- 쿼리문이 들어가있는 xml파일을 mapper라고 한다. 그것들을 모아둔 공간+태그 -->
 	<mappers>
-		<!-- SQL을 작성하는 xml 파일 -->
-		<!-- <mapper resource="/mappers/board-mapper.xml"/> -->
-		<mapper resource="/mappers/account-mapper.xml"/>
-		<mapper resource="/mappers/klass-mapper.xml"/>
-		<mapper resource="/mappers/review-mapper.xml"/>
-		<mapper resource="/mappers/comment-mapper.xml"/>
-		<mapper resource="/mappers/mypage-mapper.xml"/>
-		<mapper resource="/mappers/report-mapper.xml"/>
-		<mapper resource="/mappers/approve-mapper.xml"/>
-		<mapper resource="/mappers/payment-mapper.xml"/>
-		
-		<!-- 추가하려면 아래처럼 하면 좋다. -->
-		<!-- <mapper resource="/mappers/member-mapper.xml"/> -->
+		<mapper resource="/mappers/account-mapper.xml" />
+		<mapper resource="/mappers/klass-mapper.xml" />
+		<mapper resource="/mappers/review-mapper.xml" />
+		<mapper resource="/mappers/comment-mapper.xml" />
+		<mapper resource="/mappers/mypage-mapper.xml" />
+		<mapper resource="/mappers/report-mapper.xml" />
+		<mapper resource="/mappers/approve-mapper.xml" />
+		<mapper resource="/mappers/payment-mapper.xml" />
 	</mappers>
 </configuration>

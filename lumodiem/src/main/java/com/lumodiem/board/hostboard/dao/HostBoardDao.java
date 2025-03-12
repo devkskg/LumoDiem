@@ -46,10 +46,6 @@ public class HostBoardDao {
 		return result;
 	}
 	
-//	public int updateKlassDate(SqlSession session, KlassDate klassDate) {
-//		int result = session.update("klassMapper.klassDateUpdate",klassDate);
-//		return result;
-//	}
 	
 	public int updateKlass(SqlSession session, Klass option) {
 		int result = session.update("klassMapper.klassUpdate",option);
@@ -169,10 +165,6 @@ public class HostBoardDao {
 	public int updateReservationOneCtoR(SqlSession session, int resNo) {
 		return session.update("klassMapper.updateReservationOneCtoR",resNo);
 	}
-//	결제 실패
-//	public int deleteReservationOneRtoC(SqlSession session, int resNo) {
-//		return session.delete("klassMapper.deleteReservationOneRtoC",resNo);
-//	}
 	public Reservation selectReservationOne(SqlSession session, int resNo) {
 		return session.selectOne("klassMapper.selectReservationOne",resNo);
 	}

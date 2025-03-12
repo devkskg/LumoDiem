@@ -7,39 +7,39 @@
 <title>비밀번호 재설정</title>
 <style>
     .list-group-item a {
-        color: #000 !important;  /* 글자 색상 검은색 강제 변경 */
-        text-decoration: none;   /* 링크 밑줄 제거 */
+        color: #000 !important;  
+        text-decoration: none;  
     }
 
     h3.text-primary {
-        color: #000 !important;  /* "마이페이지" 글자 검은색 */
+        color: #000 !important; 
     }
 
     .list-group-item {
-        border-bottom: 1px solid #ddd; /* 밑줄 추가 */
+        border-bottom: 1px solid #ddd;
         display: flex;
-        align-items: center; /* 세로 정렬 */
+        align-items: center; 
     }
 
     .list-group-item .badge {
-        margin-left: auto; /* "+" 기호만 우측 정렬 */
+        margin-left: auto; 
     }
 
     .clickable-row:hover {
-	    background-color: #E8F7DC; /* 마우스 오버 시 색상 변경 */
-	    cursor: pointer;           /* 커서를 포인터로 변경 */
+	    background-color: #E8F7DC; 
+	    cursor: pointer;          
 	}
 	.mypage-box {
 	    background-color: #FFFFFF;
 	    border: 1px solid #ddd;
 	    border-radius: 10px;
 	    padding: 20px;
-	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
 	}
     a.btn-outline-danger {
-	    background-color: #F0F2EF !important;  /* 배경색 강제 적용 */
-	    color: #000000 !important;                /* 글자 색상 강제 적용 */
-	    border: 1px solid #ccc !important;                  /* 부트스트랩의 기본 테두리 제거 */
+	    background-color: #F0F2EF !important; 
+	    color: #000000 !important;              
+	    border: 1px solid #ccc !important;                 
 	}
 	.btn-outline-primary {
 	    color: #ffffff !important;
@@ -63,31 +63,6 @@
 	<%@ include file="/views/include/nav.jsp" %>
 	
 	
-	
-<%-- 	<div id="colorlib-main">
-		<section class="ftco-section ftco-no-pt ftco-no-pb">
-			<div class="container">
-				<div class="row d-flex">
-					<div class="col-xl-8 py-5 px-md-5">
-						<div class="row pt-md-4">
-							<form action="/resetPwSetPw" id="resetPw_form" name="resetPw_form" method="post">
-								<c:choose>
-									<c:when test="${not empty searchIdResetPw }">
-										<label for="account_id">아이디 : </label><input name="account_id" id="account_id" type="text" required value="${searchIdResetPw }"><br>
-									</c:when>
-									<c:otherwise>
-										<label for="account_id">아이디 : </label><input name="account_id" id="account_id" type="text" required><br>
-									</c:otherwise>
-								</c:choose>
-								<label for="account_ssn">주민등록번호 : </label><input name="account_ssn" id="account_ssn" type="text" required>
-								<button type="button" id="searchBtn">다음</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div> --%>
 	<div id="colorlib-main">
 	    <section class="ftco-section ftco-no-pt ftco-no-pb">
 	        <div class="container">
@@ -146,28 +121,6 @@
 				}
 			});
 			
-			/* 있어야 할 필요가 있을까? */
-			/* 주민등록번호 정규식 검사 */
-			/* let ssnBoolean = false;
-			$('#account_ssn').keyup(function(){
-				let ssnInput = form.account_ssn.value;
-				let ssnReg = /^(?:[0-9]{2})((01|03|05|07|08|10|12)(0[1-9]|[12][0-9]|3[01])|(04|06|09|11)(0[1-9]|[12][0-9]|30)|(02)(0[1-9]|1[0-9]|2[0-8]|29))[1-4][0-9]{6}$/;
-				if(ssnReg.test(ssnInput)){
-					$('#account_ssn').css('backgroundColor', '#98FB98');
-					ssnBoolean = true;
-				} else{
-					$('#account_ssn').css('backgroundColor', '#FF9999');
-					ssnBoolean = false;
-				}
-			});
-			
-			$('#searchBtn').click(function(){
-				if(ssnBoolean){
-					form.submit();
-				} else{
-					alert('올바른 주민등록번호를 입력해주세요.');
-				}
-			}); */
 		})
 	</script>
 </body>

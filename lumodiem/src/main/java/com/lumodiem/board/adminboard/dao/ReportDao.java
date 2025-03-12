@@ -20,7 +20,6 @@ public class ReportDao {
 		return session.selectList("reportMapper.selectReportReviewCmt",option);
 	}
 	
-	//////////////////////////////////////////////////////
 	
 	public int deleteReportReview(int reviewNo, SqlSession session) {
 		return session.insert("reportMapper.deleteReportReview",reviewNo);
@@ -31,15 +30,11 @@ public class ReportDao {
 		return session.selectOne("reportMapper.reportReviewOne",option);
 	}
 
-	
-	
 	public List<ReportReview> selectReportReviewList(ReportReview option,SqlSession session){
 		return session.selectList("reportMapper.selectReportReview",option);
 		
 	}
-//	public List<ReportKlass> selectReportKlassList (int reportKlassNo, SqlSession session){
-//		return session.selectList("reportMapper.reportKlassSelect", reportKlassNo);
-//	}
+	
 	public int deleteReportKlass(int klassNo, SqlSession session) {
 		return session.delete("reportMapper.deleteReportKlass",klassNo);
 	}

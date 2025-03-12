@@ -103,7 +103,6 @@ public class KlassReservationServelt extends HttpServlet {
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Authorization", "SECRET_KEY " + KAKAO_API_KEY);
-//		conn.setRequestProperty("Authorization", "KakaoAK " + KAKAO_API_KEY);
 			
 			conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
 			conn.setDoOutput(true);
@@ -124,15 +123,7 @@ public class KlassReservationServelt extends HttpServlet {
 			jsonParams.put("item_name", klassPayment.getKlassName());
 			jsonParams.put("quantity", quantity);
 			jsonParams.put("total_amount", total_amount);
-//        jsonParams.put("vat_amount", "0");
 			jsonParams.put("tax_free_amount", tax_free_amount);
-//        jsonParams.put("approval_url", "http://localhost:8090/pay/approve");
-//        String approvalUrl = URLEncoder.encode("http://localhost:8090/pay/success", "UTF-8");
-//        String cancelUrl = URLEncoder.encode("http://localhost:8090/pay/cancel", "UTF-8");
-//        String failUrl = URLEncoder.encode("http://localhost:8090/pay/fail", "UTF-8");
-//        jsonParams.put("approval_url", approvalUrl);
-//        jsonParams.put("cancel_url", cancelUrl);
-//        jsonParams.put("fail_url", failUrl);
 			jsonParams.put("approval_url", "http://localhost:8090/pay/success");
 			jsonParams.put("cancel_url", "http://localhost:8090/pay/cancel");
 			jsonParams.put("fail_url", "http://localhost:8090/pay/fail");

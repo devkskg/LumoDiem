@@ -11,12 +11,6 @@
 
 <link rel="stylesheet" href="<c:url value='/chatcss/chat.css'/>">
 
-<!-- jQuery (조금 최신 버전) -->
-<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-
-<!-- Bootstrap 5 -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
 
 </head>
 <body>
@@ -29,7 +23,6 @@
         <div class="col-xl-8 py-5 px-md-5">
           <div class="row pt-md-4">
 
-            <!-- ====== 클래스 상세 정보 ====== -->
             <div class="klass_detail"
               style="
                 max-width: 100%; 
@@ -41,16 +34,8 @@
               ">
             <h3 style="text-align: center; margin-bottom: 20px;">클래스 상세 정보</h3>
 				
-              <!-- 수정/삭제 버튼 (조건부) -->
               <c:choose>
                 <c:when test="${klass.accountNo eq account.accountNo or account.accountGrade eq 'A'}">
-                	<%-- <!-- 추가 -->
-                	<c:choose  >
-                		 <c:when test="${klass.approveCode eq 'S' }">
-                			<button type="button" id="updateBtn" name="updateBtn">승인</button>
-							<button type="button" id="rejectBtn" name="rejectBtn">반려</button>
-						</c:when>
-						<c:otherwise> --%>
                 	 <!-- 추가 -->
 	                  <div style="text-align: right; margin-bottom: 10px;">
 	                    <a href="/klassBoardUpdate?klass_no=${klass.klassNo}" style="text-decoration: none;">
@@ -66,11 +51,6 @@
 	                      삭제
 	                    </button>
 	                  </div>
-	                  <%-- <!-- 추가 -->
-	                  </c:otherwise>
-	                  
-                  	</c:choose>
-                  	 <!-- 추가 --> --%>
                 </c:when>
               </c:choose>
 
@@ -81,17 +61,12 @@
                   <c:choose>
 					<c:when test="${not empty klassAttach}">
 						<c:forEach var="list" varStatus="vs" items="${klassAttach }">
-						<%-- <a href="/klassDetail?klass_no=${list.klassNo}" class="img img-2" style="display: flex; 
-				          justify-content: center; align-items: center; width: 244px; height: 244px; background-image: url();"> --%>
 				          <img alt="사진" src="<%=request.getContextPath()%>/klassFilePath?attach_no=${list.attachNo}" 
 				          style="max-width: 100%; max-height: 100%;" >
-				         <!--  </a> -->
 						</c:forEach>
 					</c:when>
 					<c:otherwise>
-						<%-- <a href="/klassDetail?klass_no=${list.klassNo}" class="img img-2" style="background-image: url();"> --%>
 						<img alt="썸네일" src="/views/mainpage/thumbnail.jpg" style="height: 244px; width:244px;">
-						<!-- </a> -->
 					</c:otherwise>
 				</c:choose>
                 </li>
@@ -105,11 +80,6 @@
                       <th style="font-weight: bold; padding: 8px;">주최자</th>
                       <td style="padding: 8px;">${klass.accountNickname}</td>
                     </tr>
-                   <%--  <tr style="border-bottom: 1px solid #ddd;">
-                      <th style="font-weight: bold; padding: 8px;">내용</th>
-                      <td style="padding: 8px;">${fn:substring(klass.klassTxt,0,5)}</td>
-                      <!-- 전체 내용: ${klass.klassTxt} -->
-                    </tr> --%>
                     <tr style="border-bottom: 1px solid #ddd;">
                       <th style="font-weight: bold; padding: 8px;">일정</th>
                       <td style="padding: 8px;">
@@ -317,8 +287,8 @@
 ">
   <div class="card"
        style="
-         border: 2px solid #D1B5E0;  /* 원하는 파스텔 보라 테두리 */
-         border-radius: 10px;       /* 둥근 모서리 */
+         border: 2px solid #D1B5E0; 
+         border-radius: 10px;  
          box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
        ">
 
@@ -423,13 +393,9 @@
         </button>
       </div>
     </div>
-    <!-- 카드 푸터 끝 -->
-
   </div>
 </div>
-<!-- 채팅 패널 끝 -->
 
-<!-- ====================== 채팅 패널 끝 ====================== -->
 
 
 <script>

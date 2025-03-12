@@ -10,45 +10,35 @@
 <title>⭐리뷰 게시판⭐</title>
 <script src="<%=request.getContextPath()%>/views/jquery-3.7.1.js">></script>
   <style>
-  /* ================================
-     1) 톤온톤 컬러 팔레트 설정
-     ================================ */
   :root {
-    /* 메인 컬러(base-500) 기준: #D1B5E0 (원하시는 값) */
     --base-100: #F4ECF8;
     --base-200: #EBE0F2;
     --base-300: #E2D5ED;
     --base-400: #D8C9E7;
-    --base-500: #D1B5E0; /* 메인 컬러 */
+    --base-500: #D1B5E0; 
     --base-600: #BFA3CE;
     --base-700: #AD91BC;
     --base-800: #9B7FAA;
     --base-900: #8A6E99;
 
-    /* 텍스트/테두리 등 */
     --text-color: #333;
     --border-color: #CABED1;
   }
 
-  /* 전역 기본 스타일 */
   * {
-    box-sizing: border-box; /* 테두리·패딩 계산 일관성 위해 추가 권장 */
+    box-sizing: border-box; 
   }
   body {
     margin: 0;
     padding: 0;
     background-color: var(--base-100);
     color: var(--text-color);
-    font-family: 'Noto Sans KR', sans-serif; /* 원하는 폰트 */
+    font-family: 'Noto Sans KR', sans-serif; 
   }
 
-  /* ================================
-     2) 테이블 스타일 (톤온톤)
-     ================================ */
   table {
     width: 100%;
-    border-collapse: collapse;  /* 테두리 겹침 제거 */
-    /* background-color: var(--base-200); */
+    border-collapse: collapse; 
     margin: 16px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border: 1px solid var(--border-color);
@@ -69,19 +59,12 @@
     padding: 12px;
   }
   tbody tr:nth-child(even) {
-    background-color: var(--base-300); /* 짝수 행에 다른 톤 적용 */
+    background-color: var(--base-300); 
   }
 
-  /* ================================
-     3) select, input, button
-        모서리/높이 통일
-     ================================ */
   select, input[type="text"], button {
-    /* 모서리 둥글기 통일 */
     border-radius: 6px;
-    /* 테두리 색 통일 */
     border: 1px solid var(--border-color);
-    /* 높이·패딩 통일 */
     padding: 6px 10px;
     font-size: 14px;
     font-weight: 400;
@@ -90,7 +73,6 @@
                 background-color 0.2s ease, transform 0.2s ease;
   }
 
-  /* select, input은 흰 배경 + 기본 텍스트 */
   select, input[type="text"] {
     background-color: #fff;
     color: var(--text-color);
@@ -101,39 +83,30 @@
     box-shadow: 0 0 0 2px rgba(209,181,224,0.2);
   }
 
-  /* 버튼은 메인 컬러(기본 상태) */
   button {
     background-color: var(--base-500);
     color: #fff;
     cursor: pointer;
   }
-  /* 버튼 호버 */
   button:hover {
     background-color: var(--base-600);
   }
-  /* 버튼 클릭(액티브) */
   button:active {
     background-color: var(--base-700);
     transform: translateY(1px);
   }
 
-  /* ================================
-     4) 한 줄 정렬: .inline-form-group
-     ================================ */
   .inline-form-group {
     display: flex;
     align-items: center;
-    gap: 8px; /* 요소 간 간격 */
-    margin: 8px 0; /* 위아래 여백 */
+    gap: 8px;             
+    margin: 8px 0;
   }
 
-  /* =============== (필요시) 나머지 스타일 =============== */
-  /* 예전 .btn-pastel, .select-rounded 등 필요 없으면 삭제 */
   </style>
 </head>
 
 <body>
-<%-- <%@ include file="/views/include/nav.jsp" %> --%>
 <div id="colorlib-main">
 	<section class="ftco-section ftco-no-pt ftco-no-pb">
 		<div class="container">
@@ -145,7 +118,6 @@
 
 <h3 style="text-align: center; margin-bottom: 20px;">리뷰 게시판</h3>
 <hr>
-<!-- 정렬하기 + 작성하기 (한 줄 정렬) -->
 	<form action="<c:url value='/reviewBoard'/>" method="post" id="searchFrm"
 	class="inline-form-group"
 	    style="justify-content: space-between; width: 100%;">
@@ -163,18 +135,7 @@
 					리뷰 작성
 				</button>
 			</c:when>
-		<%-- <c:otherwise>
-			<script>
-				alert("회원만 리뷰 게시판을 사용할수있습니다.");
-				if(confirm('로그인 페이지로 이동하시겠습니까?')){
-				location.href="/views/account/login.jsp";
-				}else{
-				location.href="/";
-				}
-			</script>
-		</c:otherwise> --%>
 		</c:choose>
-		<%-- <a href="<c:url value='/insertReviewPage'/>"></a> --%>
 	
 	</form>
 
@@ -240,7 +201,6 @@
 			<c:if test="${not empty paging}">
 					
 						<c:if test="${paging.prev}">
-							<!-- c:url 사용해보자! -->
 							<c:url var="testUrl" value="/reviewBoard">
 								<c:param name="nowPage" value="${paging.pageBarStart - 1}"/>
 							</c:url>
@@ -278,37 +238,6 @@
 		</form>
 	</div>
 		
-		<%-- <table border="1">
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>닉네임</th>
-			</tr>
-	</thead>
-		<tbody>
-			<c:choose>
-				<c:when test="${not empty resultList }">
-					<c:forEach items="${resultList}" var="rb" varStatus="vs">
-						<tr data-review-no="${rb.reviewNo}">
-							<td><c:out value="${vs.count}" /></td>
-							<td><c:out value="${rb.reviewName}" /></td>
-							<td><c:out value="${rb.reviewTxt}" /></td>
-							<td><c:out value="${rb.accountNickname}"/></td>
-						</tr>
-						
-					</c:forEach>
-				</c:when>
-				<c:otherwise>
-					<tr>
-						<td colspan="4">자료없음!</td>
-					</tr>
-				</c:otherwise>
-			</c:choose>
-		</tbody>
-	</table>
-</div>	--%>
 						</div><!-- review_list -->
 					</div><!-- .row pt-md-4 -->
 				</div><!-- .col-xl-8 -->
@@ -323,12 +252,6 @@
 	}
 </script>
 
-<!-- <script>
-	$('.review_list tbody tr').click(function(){
-		const reviewNo = $(this).data('review-no');
-		location.href='/reviewDetail?review_no='+reviewNo;
-	})
-</script> -->  
 
 <%@ include file="/views/include/nav.jsp" %>
 </body>

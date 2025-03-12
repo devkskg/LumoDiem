@@ -39,7 +39,6 @@ public class ReviewDetailServlet extends HttpServlet {
         if(session != null && session.getAttribute("account") != null) {
             account = (Account)session.getAttribute("account");
             int reviewNo = Integer.parseInt(request.getParameter("review_no"));
-            System.out.println("리뷰 번호: " + reviewNo);
             
             Review review = null;
            
@@ -48,14 +47,11 @@ public class ReviewDetailServlet extends HttpServlet {
             // 이미지 여부 체크 방식 개선
             if(noImg == null || noImg.isEmpty()) {
                 review = new MemberBoardService().selectReviewNo(reviewNo);
-                System.out.println("사진 없는 리뷰 조회");
             } else {
                 review = new MemberBoardService().selectReviewOne(reviewNo);
-                System.out.println("사진 있는 리뷰 조회");
             }
 
             if (review == null) {
-                System.out.println("리뷰 데이터를 찾을 수 없음.");
                 response.sendRedirect(url); // 리뷰가 없으면 홈으로 이동
                 return;
             }

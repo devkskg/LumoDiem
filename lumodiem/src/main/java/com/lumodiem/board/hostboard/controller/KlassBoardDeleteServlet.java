@@ -24,12 +24,6 @@ public class KlassBoardDeleteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int klassNo = Integer.parseInt(request.getParameter("klass_no"));
-//		int klassNo = 0;
-//		if(klassTemp != null) klassNo = Integer.parseInt(klassTemp);
-//		Klass klass = Klass.builder()
-//				.klassNo(klassNo)
-//				.build();
-//		System.out.println(klassNo);
 		
 		String attachTemp = request.getParameter("attach_no");
 		int attachNo = 0;
@@ -43,10 +37,6 @@ public class KlassBoardDeleteServlet extends HttpServlet {
 			result = new HostBoardService().deleteKlassOne(klassNo);
 		}
 		
-		
-//		request.setAttribute("klass", klass);
-//		RequestDispatcher view = request.getRequestDispatcher("/views/klass/klassBoardUpdate.jsp");
-//		view.forward(request, response);
 		
 		JSONObject obj = new JSONObject();
 		obj.put("res_code", "500");

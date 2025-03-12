@@ -23,7 +23,6 @@ public class DeleteReportReviewCmtServlet extends HttpServlet {
 		String temp = request.getParameter("review_cmt_no");
 		int reviewCmtNo = 0;
 		if(temp!=null)reviewCmtNo = Integer.parseInt(temp);
-		System.out.println(reviewCmtNo);
 		int result = new ReportService().deleteReportReviewCmt(reviewCmtNo);
 		JSONObject obj = new JSONObject();
 		obj.put("res_code", "500");

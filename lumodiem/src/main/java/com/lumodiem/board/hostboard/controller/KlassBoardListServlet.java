@@ -32,11 +32,6 @@ public class KlassBoardListServlet extends HttpServlet {
 		String orderType = request.getParameter("order_type"); 
 		String temp = request.getParameter("klass_no");
 		
-//		String txt1 = klassTxt.substring(0,klassTxt.indexOf("<img"));
-//		String txt2 = klassTxt.substring(klassTxt.lastIndexOf("<br"),klassTxt.length()-1);
-//		
-//		txt1 += txt2;
-//		List<KlassDate> dateList = new HostBoardService().selectKlassDate(klassNo);
 		
 		Klass option = Klass.builder()
 				.klassName(klassName)
@@ -54,7 +49,6 @@ public class KlassBoardListServlet extends HttpServlet {
 		if(nowPage != null) {
 			option.setNowPage(Integer.parseInt(nowPage));
 		}
-		System.out.println("option : " + option);
 		
 		int totalData = new HostBoardService().selectKlassCount(option);
 		option.setTotalData(totalData);
@@ -64,7 +58,6 @@ public class KlassBoardListServlet extends HttpServlet {
 		
 		
 		List<Klass> resultList = new HostBoardService().searchImgBoardList(option);
-//		resultList = new HostBoardService().searchImgBoardList(option);
 		for(Klass k : resultList) {
 			int klassNo = k.getKlassNo();
 			List<KlassDate> dateList = new HostBoardService().selectDateList(klassNo);
@@ -73,13 +66,8 @@ public class KlassBoardListServlet extends HttpServlet {
 		
 		
 		
-		System.out.println("게시판 result"+resultList);
 		
 		request.setAttribute("resultList", resultList);
-//		request.setAttribute("dateList", dateList);
-		System.out.println(resultList);
-		System.out.println("텍스트 : "+option.getKlassTxt());
-//		System.out.println("데이트리스트 : "+dateList);
 		RequestDispatcher view = request.getRequestDispatcher("/views/klass/klassBoard.jsp");
 		view.forward(request, response);
 		

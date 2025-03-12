@@ -116,12 +116,18 @@
 															<td>${startNo + vs.index + 1}</td>
 															<td>${list1.klassName}</td>
 															<td>${list1.accountNickname}</td>
-															<c:if test="${not empty reviewDTO }">
+															<c:if test="${not empty reviewDTO and reviewDTO[0].klassNo eq list1.klassNo }">
 																<td>${reviewDTO[0].reviewName}</td>
 															</c:if>
-															<c:if test="${empty reviewDTO }">
-																<td>(-)</td>
+															<c:if test="${not empty reviewDTO and reviewDTO[0].klassNo ne list1.klassNo }">
+																<td>(작성된 리뷰가 없습니다.)</td>
 															</c:if>
+															<c:if test="${empty reviewDTO }">
+																<td>(작성된 리뷰가 없습니다.)</td>
+															</c:if>
+															
+															
+															
 												        </tr>
 													</c:forEach>
 												</c:when>

@@ -45,7 +45,6 @@ public class MypageCmtServlet extends HttpServlet {
 				if(nowPage != null) {
 					option.setNowPage(Integer.parseInt(nowPage));
 				}
-				System.out.println("option : " + option);
 				
 				int totalData = new MypageService().reviewCmtListCount(option);
 				option.setTotalData(totalData);
@@ -53,7 +52,6 @@ public class MypageCmtServlet extends HttpServlet {
 //				페이징 추가
 				reviewCmtList = new MypageService().selectReviewCmtListByAccountNo(option);
 				request.setAttribute("reviewCmtList", reviewCmtList);
-				System.out.println(reviewCmtList);
 				
 				urlPath = request.getContextPath()+"/views/mypage/mypagecmt.jsp";
 				RequestDispatcher view = request.getRequestDispatcher(urlPath);

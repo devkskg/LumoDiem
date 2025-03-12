@@ -46,7 +46,6 @@ public class ReportKlassServlet extends HttpServlet {
 		if(nowPage != null) {
 			option.setNowPage(Integer.parseInt(nowPage));
 		}
-		System.out.println("option : " + option);
 		
 		int totalData = new ReportService().reportKlassListCount(option);
 		option.setTotalData(totalData);

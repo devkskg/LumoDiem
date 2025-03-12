@@ -7,32 +7,32 @@
 <title>회원가입</title>
 <style>
     .list-group-item a {
-        color: #000 !important;  /* 글자 색상 검은색 강제 변경 */
-        text-decoration: none;   /* 링크 밑줄 제거 */
+        color: #000 !important;
+        text-decoration: none;
     }
 
     h3.text-primary {
-        color: #000 !important;  /* "마이페이지" 글자 검은색 */
+        color: #000 !important;
     }
 
     .list-group-item {
-        border-bottom: 1px solid #ddd; /* 밑줄 추가 */
+        border-bottom: 1px solid #ddd;
         display: flex;
-        align-items: center; /* 세로 정렬 */
+        align-items: center;
     }
 
     .list-group-item .badge {
-        margin-left: auto; /* "+" 기호만 우측 정렬 */
+        margin-left: auto;
     }
 
     .clickable-row:hover {
-	    background-color: #E8F7DC; /* 마우스 오버 시 색상 변경 */
-	    cursor: pointer;           /* 커서를 포인터로 변경 */
+	    background-color: #E8F7DC;
+	    cursor: pointer;
 	}
     a.btn-outline-danger {
-	    background-color: #F0F2EF !important;  /* 배경색 강제 적용 */
-	    color: #000000 !important;                /* 글자 색상 강제 적용 */
-	    border: 1px solid #ccc !important;                  /* 부트스트랩의 기본 테두리 제거 */
+	    background-color: #F0F2EF !important; 
+	    color: #000000 !important;             
+	    border: 1px solid #ccc !important;                
 	}
 	.btn-outline-primary {
 	    color: #ffffff !important;
@@ -46,7 +46,7 @@
 	    border: 1px solid #ddd;
 	    border-radius: 10px;
 	    padding: 20px;
-	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
 	}
 
 	
@@ -56,56 +56,6 @@
 <body>
 	<%@ include file="/views/include/nav.jsp" %>
 	
-	<!-- <div id="colorlib-main">
-		<section class="ftco-section ftco-no-pt ftco-no-pb">
-			<div class="container">
-			
-				<form name="create_member_form" action="">
-					<input name="account_grade" style="display: none" value=${select}><br>
-					<label for="account_id">아이디 : </label><input name="account_id" id="account_id" type="text">
-					<button type="button" id="duplicate_id" name="duplicate_id" class="duplicate">중복확인</button><br>
-					
-					<label for="account_pw">비밀번호 : </label><input name="account_pw" id="account_pw" type="password">
-					<label for="account_pw_check">비밀번호 확인 : </label><input name="account_pw_check" id="account_pw_check" type="password">
-					<span class="dis" style="vertical-align: middle;"><ion-icon id="openEye" class="eye" name="eye-off-outline" size="large" style=""></span>
-					<span class="dis" style="vertical-align: middle;"><ion-icon id="closeEye" class="eye dis" name="eye-off-outline " size="large" style=""></span>
-					
-					<span class="icon eye-off-outline"></span>
-					<br>
-					
-					<label for="account_name">이름 : </label><input name="account_name" id="account_name" type="text"><br>
-					<label for="account_nickname">닉네임 : </label><input name="account_nickname" id="account_nickname" type="text">
-					<button type="button" id="duplicate_nickname" name="duplicate_nickname" class="duplicate">중복확인</button> <br>
-					
-					<label for="account_ssn">주민등록번호 : </label><input name="account_ssn" id="account_ssn" type="text">
-					<button type="button" id="duplicate_ssn" name="duplicate_ssn" class="duplicate">중복확인</button> <br>
-					
-					<label for="account_phone">전화번호 : </label><input name="account_phone" id="account_phone" type="text">
-					<button type="button" id="duplicate_phone" name="duplicate_phone" class="duplicate">중복확인</button> <br>
-					
-					<label for="account_address">주소 : </label><input name="account_address" id="account_address" type="text"><br>
-					
-					
-					<input type="text" name="postcode" id="postcode" placeholder="우편번호">
-					<input type="button" name="findPostCode_btn" id="findPostCode_btn" value="우편번호 찾기"><br>
-					<input type="text" name="address" id="address" placeholder="주소"><br>
-					<input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소"><br>
-					
-					
-					<label for="account_email">이메일 : </label><input name="account_email" id="account_email" type="text"><br>
-					
-					
-					
-					
-					
-					
-					<button type="button" id="submitBtn">가입하기</button>
-					<a href="/" style="color: black"><button type="button">홈으로 돌아가기</button></a>
-				</form>
-			
-			</div>
-		</section>
-	</div> -->
 	
 	
 	

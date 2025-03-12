@@ -32,7 +32,6 @@ public class ReportReviewCmtServlet extends HttpServlet {
 				.searchTxt(searchTxt)
 				.searchType(searchType)
 				.build();
-		System.out.println(option);
 		
 		List<ReportReviewCmt> resultList= new ReportService().selectReportReviewCmtList(option);
 		RequestDispatcher view = request.getRequestDispatcher("/views/admin/reportReviewCmt.jsp");

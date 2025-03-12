@@ -44,14 +44,8 @@ public class SearchIdEndServlet extends HttpServlet {
 			}
 			
 			
-//			JSONObject obj = new JSONObject();
-//			
-//			obj.put("res_code", "500");
-//			obj.put("res_msg", "아이디 찾기중 오류가 발생했습니다.");
 			
 			if(searchAccount != null) {
-//				obj.put("res_code", "200");
-//				obj.put("res_msg", "아이디 찾기를 완료했습니다.");
 				
 				RequestDispatcher view = request.getRequestDispatcher(request.getContextPath()+"/views/account/searchIdSuccess.jsp");
 				request.setAttribute("searchAccount", searchAccount);
@@ -59,8 +53,6 @@ public class SearchIdEndServlet extends HttpServlet {
 			} else {
 				response.sendRedirect(request.getContextPath()+"/views/account/searchIdFail.jsp");
 			}
-//			response.setContentType("application/json; charset=utf-8");
-//			response.getWriter().print(obj);
 		}
 	}
 

@@ -54,11 +54,6 @@ public class KlassReportServlet extends HttpServlet {
 		response.getWriter().print(obj);
 		
 		
-		// 세션정보 확인해야함./
-//		RequestDispatcher view = request.getRequestDispatcher("/views/klass/klassReport.jsp");
-//		request.setAttribute("klass", klass);
-//		System.out.println("신고서블릿 klass : "+klass);
-//		view.forward(request, response);
 	
 	}
 

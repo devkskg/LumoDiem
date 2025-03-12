@@ -7,32 +7,32 @@
 <title>주최자 마이페이지</title>
 <style>
     .list-group-item a {
-        color: #000;  /* 글자 색상 검은색 강제 변경 */
-        text-decoration: none;   /* 링크 밑줄 제거 */
+        color: #000;  
+        text-decoration: none;   
     }
 
     h3.text-primary {
-        color: #000 !important;  /* "마이페이지" 글자 검은색 */
+        color: #000 !important; 
     }
 
     .list-group-item {
-        border-bottom: 1px solid #ddd; /* 밑줄 추가 */
+        border-bottom: 1px solid #ddd; 
         display: flex;
-        align-items: center; /* 세로 정렬 */
+        align-items: center; 
     }
 
     .list-group-item .badge {
-        margin-left: auto; /* "+" 기호만 우측 정렬 */
+        margin-left: auto; 
     }
     
 	table {
 	    border: 1px solid #ddd !important;
-	    border-spacing: 0 10px !important; /* 간격을 더 넓게 조정 */
+	    border-spacing: 0 10px !important; 
 	    border-collapse: separate !important; 
 	}
 	
 	tr {
-	    background-color: #E8DAEF; /* 행마다 구분감을 주기 위해 화이트 배경 */
+	    background-color: #E8DAEF;
 	    border-bottom: 2px solid #aaa;
 	}
 	
@@ -41,21 +41,21 @@
 	}
 	
 	td:first-child {
-	    text-align: left; /* 첫 번째 <td> 왼쪽 정렬 */
+	    text-align: left; 
 	}
 	
 	td:last-child {
-	    text-align: right; /* 마지막 <td> 오른쪽 정렬 */
+	    text-align: right; 
 	}
 
     .clickable-row:hover {
-	    background-color: #D1B5E0; /* 마우스 오버 시 색상 변경 */
-	    cursor: pointer;           /* 커서를 포인터로 변경 */
+	    background-color: #D1B5E0; 
+	    cursor: pointer;         
 	}
     .btn-outline-danger {
-	    background-color: #F0F2EF !important;  /* 배경색 강제 적용 */
-	    color: #000000 !important;                /* 글자 색상 강제 적용 */
-	    border: 1px solid #ccc !important;                  /* 부트스트랩의 기본 테두리 제거 */
+	    background-color: #F0F2EF !important;  
+	    color: #000000 !important;             
+	    border: 1px solid #ccc !important;               
 	}
 	.btn-outline-primary {
 	    color: #ffffff !important;
@@ -69,11 +69,8 @@
 	    border: 1px solid #ddd;
 	    border-radius: 10px;
 	    padding: 20px;
-	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+	    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
 	}
-	/* .list-group-item{
-		background-color: #E8DAEF !important;
-	} */
 	    
 </style>
 </head>

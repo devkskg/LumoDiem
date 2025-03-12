@@ -42,9 +42,6 @@ public class CreateCommentEndServlet extends HttpServlet {
 		
 		int result = new ReviewCommentService().insertReviewComment(cmt2);
 		List<ReviewCmt> resultList = new ReviewCommentService().selectReviewComment(cmt2);
-		//reviewDetail?review_no=42
-		//RequestDispatcher view = request.getRequestDispatcher("/reviewDetail?review_no"+reviewNo);
-		//view.forward(request, response);
 		JSONObject obj = new JSONObject();
 		obj.put("res_code", "500");
 		obj.put("res_msg", "등록 오류");

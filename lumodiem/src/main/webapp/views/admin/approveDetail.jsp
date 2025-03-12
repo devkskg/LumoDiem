@@ -73,15 +73,12 @@
 				<c:choose>
 					<c:when test="${not empty klassAttach}">
 						<c:forEach var="list" varStatus="vs" items="${klassAttach }">
-							<%-- <a href="/klassDetail?klass_no=${list.klassNo}" class="img img-2" style="display: flex; 
-							        justify-content: center; align-items: center; width: 244px; height: 244px; background-image: url();"> --%>
 							<img alt="사진" src="<%=request.getContextPath()%>/klassFilePath?attach_no=${list.attachNo}" 
 							style="max-width: 100%; max-height: 100%;" >
 							<!--  </a> -->
 						</c:forEach>
 					</c:when>
 					<c:otherwise>
-						<%-- <a href="/klassDetail?klass_no=${list.klassNo}" class="img img-2" style="background-image: url();"> --%>
 						<img alt="썸네일" src="/views/mainpage/thumbnail.jpg" style="height: 244px; width:244px;">
 						<!-- </a> -->
 					</c:otherwise>
@@ -98,11 +95,6 @@
 						<th style="font-weight: bold; padding: 8px;">주최자</th>
 						<td style="padding: 8px;">${klass.accountNickname}</td>
 					</tr>
-					<%-- <tr style="border-bottom: 1px solid #ddd;">
-						<th>내용</th>
-						<td>${fn:substring(klass.klassTxt,0,5)}</td>
-						<!--<td>${klass.klassTxt}</td> -->
-					</tr> --%>
 					<tr style="border-bottom: 1px solid #ddd;">
 						<th style="font-weight: bold; padding: 8px;">일정</th>
 						<td style="padding: 8px;">
@@ -121,7 +113,6 @@
 					</tr>
 					<tr style="border-bottom: 1px solid #ddd;">
 						<th style="font-weight: bold; padding: 8px;">최대(예약가능)</th>
-						<%-- <td>${klass.klassMax}명(${klass.klassMax - klassDate.klassCount}명)</td> --%>
 						<td style="padding: 8px;">
 							<c:forEach var="li" items="${klassDate }" varStatus="vs">
 							${klass.klassMax}명(${klass.klassMax - li.klassCount}명)<br>
@@ -140,10 +131,6 @@
 						<th style="font-weight: bold; padding: 8px;">작성일</th>
 						<td style="padding: 8px;">${klass.klassRegDate}</td>
 					</tr>
-					<%-- <tr style="border-bottom: 1px solid #ddd;">
-						<th>상세 내용</th>
-						<td>${klass.klassTxt}</td>
-					</tr> --%>
 				
 				</table>		
 			</li>

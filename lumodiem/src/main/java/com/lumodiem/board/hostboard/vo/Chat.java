@@ -17,7 +17,6 @@ import lombok.ToString;
 public class Chat {
 	private int chatNo;
 	private int klassNo;
-//	private int accountNo;
 	private String chatTxt;
 	private String accountNickname;
 

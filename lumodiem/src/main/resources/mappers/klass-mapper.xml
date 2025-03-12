@@ -5,10 +5,6 @@
 <mapper namespace="klassMapper">
 
 	<resultMap type="klassVo" id="klassMap">
-		<!-- 
-			컬럼명과 필드명을 1대1로 써준다.
-		 	vo의 필드명과 테이블의 컬럼명이 다르기 때문에 맞춰즌 것!
-		 -->
 		<result property="klassNo" column="klass_no"/>
 		<result property="accountNo" column="account_no"/>
 		<result property="klassName" column="klass_name"/>

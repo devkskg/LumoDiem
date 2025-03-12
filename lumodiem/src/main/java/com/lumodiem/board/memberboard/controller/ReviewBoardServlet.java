@@ -31,7 +31,6 @@ public class ReviewBoardServlet extends HttpServlet {
 		String searchTxt = request.getParameter("search_txt");
 		String orderType = request.getParameter("order_type");
 		
-//		int accountNo = Integer.parseInt(request.getParameter("account_no"));
 		
 		Review option = Review.builder()
 				.reviewName(reviewName)
@@ -48,7 +47,6 @@ public class ReviewBoardServlet extends HttpServlet {
 		if(nowPage != null) {
 			option.setNowPage(Integer.parseInt(nowPage));
 		}
-		System.out.println("option : " + option);
 		
 		int totalData = new MemberBoardService().selectReviewCount(option);
 		option.setTotalData(totalData);

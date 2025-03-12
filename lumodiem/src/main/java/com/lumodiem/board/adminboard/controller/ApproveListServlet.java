@@ -48,14 +48,12 @@ public class ApproveListServlet extends HttpServlet {
 		if(nowPage != null) {
 			option.setNowPage(Integer.parseInt(nowPage));
 		}
-		System.out.println("option : " + option);
 		
 		int totalData = new ApproveSerview().approveListCount(option);
 		option.setTotalData(totalData);
 		request.setAttribute("paging", option);
 //		페이징 추가
 		
-		//List<Klass> resultList = new HostBoardService().searchBoardList(option);
 		List<Klass> resultList = new ApproveSerview().selectApproveList(option);
 		request.setAttribute("resultList", resultList);
 		RequestDispatcher view = request.getRequestDispatcher("/views/admin/approveList.jsp");

@@ -14,27 +14,21 @@ import com.lumodiem.board.hostboard.vo.Klass;
 
 public class ApproveSerview {
 	ApproveDao dao = new ApproveDao();
-	
+
 	public int updateApprove(Approve approve) {
 		SqlSession session = getSqlSession();
-		int result = dao.updateApprove(approve,session);
+		int result = dao.updateApprove(approve, session);
 		commitRollback(session, result);
 		session.close();
 		return result;
 	}
-	
 
-	
-	
-	public List<Klass> selectApproveList (Klass option){
+	public List<Klass> selectApproveList(Klass option) {
 		SqlSession session = getSqlSession();
 		List<Klass> resultList = dao.selectApproveList(option, session);
 		session.close();
 		return resultList;
 	}
-
-
-
 
 	public int approveListCount(Klass option) {
 		SqlSession session = getSqlSession();

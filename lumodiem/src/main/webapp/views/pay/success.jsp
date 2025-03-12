@@ -12,7 +12,7 @@
 	$(function() {
 	    // url을 통해? pg_token 추출
 	    function getPgTokenFromUrl() {
-	    	// 현재 페이지의 URL에서 쿼리스트링(파라미터)을 가져와서 다룰 수 있도록 하는 기능(?????)
+	    	// 현재 페이지의 URL에서 쿼리스트링(파라미터)을 가져와서 다룰 수 있도록 하는 기능
 	    	// window.location.search는 현재 페이지의 URL에서 ? 뒤에 오는 "쿼리 문자열(query string)" 부분을 가져온다.
 	    	// 요약하자면 ?를 포함한 뒤의 문자열을 가져온다는 뜻
 	    	// 해당 쿼리스트링을 다룰 수 있는 객체인 urlPrams를 선언한 것.

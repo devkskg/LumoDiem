@@ -35,11 +35,10 @@ public class KlassBoardUpdateServlet extends HttpServlet {
 		List<KlassAttach> klassAttach = new HostBoardService().selectAttachList(klassNo);
 
 		RequestDispatcher view = request.getRequestDispatcher("/views/klass/klassBoardUpdate.jsp");
-		
-		 request.setAttribute("klass", klass); request.setAttribute("klassDate",
-		 klassDate); request.setAttribute("klassAttach", klassAttach);
-		 System.out.println("klass"+klass); System.out.println("klassDate"+klassDate);
-		 
+
+		request.setAttribute("klass", klass);
+		request.setAttribute("klassDate", klassDate);
+		request.setAttribute("klassAttach", klassAttach);
 
 		view.forward(request, response);
 

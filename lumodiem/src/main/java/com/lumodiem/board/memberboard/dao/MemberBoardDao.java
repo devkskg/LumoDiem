@@ -58,9 +58,6 @@ public class MemberBoardDao {
 	public int deleteAttach(SqlSession session, int attachNo) {
 		return session.delete("reviewMapper.deleteAttach",attachNo);
 	}
-//	public int deleteMapping(SqlSession session, int reviewNo) {
-//		return session.delete("reviewMapper.deleteMapping",reviewNo);
-//	}
 	public int deleteReviewOne(SqlSession session, int reviewNo) {
 		return session.delete("reviewMapper.deleteReviewOne",reviewNo);
 	}

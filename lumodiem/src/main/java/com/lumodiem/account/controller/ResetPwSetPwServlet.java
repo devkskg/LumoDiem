@@ -42,16 +42,10 @@ public class ResetPwSetPwServlet extends HttpServlet {
 				RequestDispatcher view = request.getRequestDispatcher("/views/account/resetPwSetPw.jsp");
 				if(accountResetPw != null) {
 					if(accountResetPw.getAccountNo() > 0) {
-//						if(session.isNew() || session.getAttribute("accountResetPw") == null) {
-//							if(session != null && session.getAttribute("accountResetpw") != null) {
-//								session.removeAttribute("accountResetPw");
-//								session.invalidate();
-//							}
 							
 							session.setAttribute("accountResetPw", accountResetPw);
 							session.setMaxInactiveInterval(60*30);
 							view.forward(request, response);
-//						}
 					} else {
 						response.sendRedirect(request.getContextPath()+"/views/account/searchIdFail.jsp");
 					}

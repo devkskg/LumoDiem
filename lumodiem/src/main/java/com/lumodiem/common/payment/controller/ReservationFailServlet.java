@@ -25,9 +25,6 @@ public class ReservationFailServlet extends HttpServlet {
         System.out.println("/reservation/fail");
 		if(session != null && session.getAttribute("account") != null) {
 			int resNo = (int)session.getAttribute("res_no");
-//			System.out.println(resNo);
-//			결제 실패시 reservation delete 메소드
-//			int result = new HostBoardService().deleteReservationOneRtoC(resNo);
 			RequestDispatcher view = request.getRequestDispatcher("/klassBoardList");
 			view.forward(request, response);
 		} else {

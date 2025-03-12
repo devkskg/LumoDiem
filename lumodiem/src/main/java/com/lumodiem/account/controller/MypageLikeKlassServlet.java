@@ -45,7 +45,6 @@ public class MypageLikeKlassServlet extends HttpServlet {
 				if(nowPage != null) {
 					option.setNowPage(Integer.parseInt(nowPage));
 				}
-				System.out.println("option : " + option);
 				
 				int totalData = new MypageService().klassLikeListCount(option);
 				option.setTotalData(totalData);

@@ -25,17 +25,7 @@ public class CnclReservationServlet extends HttpServlet {
 		System.out.println(request.getParameter("res_no"));
 		int resNo = Integer.parseInt(request.getParameter("res_no"));
 		System.out.println(resNo);
-//		int klassDateNo = Integer.parseInt(request.getParameter("kdn"));
-//    	int accountNo = 0;
 		int result = 0;
-//		KlassDate option = KlassDate.builder().klassDateNo(klassDateNo).build();
-//		KlassDate kd = new HostBoardService().klassCountByKlassMax(option);
-//		Account ac = null;
-//		HttpSession session = request.getSession();
-//		if(session != null && session.getAttribute("account") != null) {
-//			ac = (Account)session.getAttribute("account");
-//			accountNo = ac.getAccountNo();
-//		}
 		Reservation r= new Reservation();
 		r.setResNo(resNo);
 		result = new HostBoardService().cnclReservation(resNo);

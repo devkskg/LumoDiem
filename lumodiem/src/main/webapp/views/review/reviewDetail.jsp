@@ -9,23 +9,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- Bootstrap CSS -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-<!-- Bootstrap Bundle (JS + Popper.js) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<%=request.getContextPath()%>/views/jquery-3.7.1.js">></script>
 <link rel="stylesheet" href="<c:url value='/views/css/reviewComment.css'/>"> 
-<%-- <link rel="stylesheet" href="<c:url value='/views/css/reviewCmtTest.css'/>"> --%>
 <title>클래스 조회</title>
 
 <style>
 .inline-form-group {
     display: flex;
     align-items: center;
-    gap: 8px; /* 요소 간 간격 */
-    margin: 8px 0; /* 위아래 여백 */
-    justify-content: flex-end; /* 오른쪽 정렬 */
-    padding-right: 30px; /* 오른쪽에서 30px 떨어뜨림 */
+    gap: 8px;
+    margin: 8px 0; 
+    justify-content: flex-end; 
+    padding-right: 30px; 
 }
 </style>
 </head>
@@ -40,64 +36,6 @@
 					<div class="row pt-md-4">
 			
 			
-			<!-- css 적용전  -->
-	<%-- <h3>리뷰 상세 정보</h3>
-	<div class="review">
-	<c:choose>
-		<c:when test="${review.accountNo eq account.accountNo }">
-			<button type="button" id="updateBtn" name="updateBtn">
-				<a href="/updateReviewPage?review_no=${review.reviewNo}">수정</a>
-			</button>
-			<button type="button" id="deleteBtn" name="deleteBtn">
-				삭제
-			</button>
-		</c:when>
-	</c:choose>
-		<ul>
-			<li>
-				<img src="${request.getContextPath}/filePath?attach_no=${review.attachNo}" class="review img" > 
-			</li> 
-			<li>
-				<table>
-					<tr>
-						<td>제목</td>
-						<td>${review.reviewName}</td>
-					</tr>
-					<tr>
-						<td>내용</td>
-						<td>${review.reviewTxt}</td>
-					</tr>
-					<tr>
-						<td>작성자</td>
-						<td>${review.accountNickname}</td>
-					</tr>
-					<tr>
-						<td>등록일</td>
-						<td>${review.reviewRegDate}</td>
-					</tr>
-					<tr>
-						<td>수정일</td>
-						<td>${review.reviewModDate}</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<c:choose>
-								<c:when test="${myLikeCount eq 0 }">
-									<div class="icon"><span class="icon-heart-o" id="unlikeToLike">${totalLikeCount }</span></div>
-								</c:when>
-								<c:otherwise>
-									<div class="icon"><span class="icon-heart" id="likeToUnlike">${totalLikeCount }</span></div>
-								</c:otherwise>
-							</c:choose>
-						</td>
-					</tr>
-				</table>
-			</li>
-		</ul> 
-		<hr>
-		</div>  --%>
-		
-<!-- ==================== 리뷰 상세 정보 =========== -->		
 <div class="review" 
 	style="
 		max-width: 100%; 
@@ -203,9 +141,6 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
-		        <!-- <label for="memberBirth">신고하기</label> -->
-	              <!-- <input type="date" class="form-control" name="member_birth" id="memberBirth" value="yyyy-MM-dd"
-   					 min="1920-01-01"> -->
    					 <input type="radio" name="reportReview" id="abuse" value="욕설">
    					 <label for="aduse">욕설</label><br>
    					 <input type="radio" name="reportReview" id="hateSpch" value="비하발언">
@@ -222,60 +157,6 @@
 		    </div>
 		  </div>
 		</div>
-		<!-- css 적용 전 댓글 창  -->
-		<%-- <div>
-		<form>
-			<table border="1" class="reivew_cmt_list">
-				<!-- <thead>
-					<tr>
-						<th>내용</th>
-						<th>닉네임</th>
-					</tr>
-				</thead>-->
-				<tbody> 
-					<c:choose>
-						<c:when test="${not empty reviewCmt }">
-						
-							<c:forEach var="list" items="${reviewCmt }" varStatus="vs">
-							<thead>
-									<tr>
-										<th colspan="2">${list.accountNickname}</th>
-										
-									</tr>
-								</thead>
-								<tbody>
-							<tr>
-								<td>
-									
-									<input type="hidden" class="review_cmt_no" value="${list.reviewCmtNo}">
-									<textarea class="review_cmt_txt" readonly="readonly" >${list.reviewCmtTxt}</textarea>
-								</td>
-								<td>
-									<input type="text" class="account_nickname" value="${list.accountNickname}" readonly="readonly">
-								</td>
-								
-								<c:choose>
-									<c:when test="${list.accountNo eq account.accountNo}">
-										<td  class="mt-3 d-flex gap-2 justify-content-center">
-											<input class="a" type="button" value="수정">
-											<input type="button" class="delete_btn" value="삭제" style="display:none;">
-										</td>
-									</c:when>
-								</c:choose>
-								
-							</tr>
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<td colspan="5">작성된 리뷰가 없습니다.</td>
-						</c:otherwise>					
-					
-					</c:choose>
-					
-				</tbody>
-			</table>
-		</form>
-		</div> --%>
 		
 		
 	<!-- 리뷰 목록 -->	
@@ -295,7 +176,6 @@
                  <th style="width: 200px; padding: 8px;">내용</th>
                  <th style="width: 100px; padding: 8px;">닉네임</th>
                  <th style="width: 100px; padding: 8px;">수정/삭제</th>
-                 <!-- <th style="width: 150px; padding: 8px;">작성일</th> -->
                </tr>
             </thead>
             
@@ -304,11 +184,6 @@
                 <c:choose>
                     <c:when test="${not empty reviewCmt}">
                         <c:forEach var="list" items="${reviewCmt}" varStatus="vs">
-                                <%-- <tr style="background-color: #E8DAEF; border-bottom: 1px solid #ddd;">
-                                    <th colspan="2" style="padding: 8px;">
-                                        ${list.accountNickname}
-                                    </th>
-                                </tr> --%>
                                 <tr style="background-color: #E8DAEF; border-bottom: 1px solid #ddd;">
                                     <th style="padding: 8px;">${vs.count}</th> 
                                     <td style="padding: 8px;">
@@ -349,9 +224,7 @@
 				class="inline-form-group"
                 style="justify-content: space-between; width: 100%;">
 				<input type="text" value="${account.accountNo}" style="display: none" name="account_no">
-				<%--  <input type="hidden" name="account_no" value="${review.accountNo }"> --%>
 				<input type="hidden" name="review_no" value="${review.reviewNo }">
-				<!-- <input type="text" name="review_cmt_txt" placeholder="내용을 입력하세요."> -->
 				<textarea class="review_cmt_txt" name="review_cmt_txt" placeholder="내용을 입력하세요."></textarea>
 				
 				
