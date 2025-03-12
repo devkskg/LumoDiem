@@ -11,9 +11,36 @@ public class AccountDao {
 		return result;
 	}
 
-	public Account loginAccount(SqlSession session, Account temp) {
-		Account act = session.selectOne("accountMapper.loginSelect", temp);
-		return act;
+	public Account loginAccount(SqlSession session, Account act) {
+		Account account = session.selectOne("accountMapper.loginSelect", act);
+		return account;
 	}
+
+	public Account accountDuplicateCheck(SqlSession session, Account act) {
+		Account account = session.selectOne("accountMapper.accountDuplicateCheck", act);
+		return account;
+	}
+
+	public Account searchIdNameByTwoInfo(SqlSession session, Account act) {
+		Account account = session.selectOne("accountMapper.searchIdNameByTwoInfo", act);
+		return account;
+	}
+
+	public int resetPw(SqlSession session, Account act) {
+		int result = session.update("accountMapper.resetPw", act);
+		return result;
+	}
+
+	public Account mypageUpdateDuplicateCheck(SqlSession session, Account act) {
+		Account account = session.selectOne("accountMapper.mypageUpdateDuplicateCheck", act);
+		return account;
+	}
+
+	public int mypageUpdateEndFin(SqlSession session, Account act) {
+		int result = session.update("accountMapper.mypageUpdateEndFin", act);
+		return result;
+	}
+
+
 
 }

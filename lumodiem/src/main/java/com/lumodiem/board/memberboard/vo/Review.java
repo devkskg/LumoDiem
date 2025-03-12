@@ -1,5 +1,7 @@
 package com.lumodiem.board.memberboard.vo;
 
+import com.lumodiem.common.vo.Paging;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,12 +16,26 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class Review {
+public class Review extends Paging {
 
 	private int reviewNo; // 리뷰번호
 	private int accountNo; // 회원번호
 	private int resNo; // 예약번호
-	private int klassDateNo; // 클래스 예약일 목록번호
-	private String reviewTxt; // 리뷰 번호
+	private String reviewTxt;
 	private String reviewName;
+	private String accountNickname;
+	private String reviewRegDate;
+	private String reviewModDate;
+	private String orderType;
+	private int attachNo;
+	private String klassName;
+	private String payTime;
+	private String payStatus;
+	private int payPrice;
+	private String attachPath;
+	private int reviewLikeCount;
+	private String searchTxt;
+	private String searchType;
+	private String klassNo;
 }
+

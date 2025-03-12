@@ -41,7 +41,7 @@ public class LoginEndServlet extends HttpServlet {
 			System.out.println("로그인 성공");
 			response.sendRedirect("/");
 		} else {
-			RequestDispatcher view = request.getRequestDispatcher("/views/member/login_fail.jsp");
+			RequestDispatcher view = request.getRequestDispatcher(request.getContextPath() + "/views/account/loginFail.jsp");
 			view.forward(request, response);
 		}
 		

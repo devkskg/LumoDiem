@@ -1,5 +1,7 @@
 package com.lumodiem.board.hostboard.vo;
 
+import java.time.format.DateTimeFormatter;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,5 +22,6 @@ public class KlassDate {
 	private String klassStart;
 	private String klassEnd;
 	private int klassCount;
-
+	private int klassMax;
+	private int resNo;
 }

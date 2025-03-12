@@ -16,8 +16,9 @@ import lombok.ToString;
 
 public class KlassLike {
 	
-	private int klassLikeNo;
-	private int accountNo;
-	private int klassNo;
+	private int klassLikeNo; // 클래스 좋아요 번호
+	private int accountNo; // 회원 번호
+	private int klassNo; // 클래스 번호
+	private String klassName; // 클래스 제목
 
 }

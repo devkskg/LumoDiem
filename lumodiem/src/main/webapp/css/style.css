@@ -133,12 +133,15 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #D1B5E0;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #0056b3;
-    text-decoration: underline; }
+    color: #D1B5E0;
+    text-decoration: underline;
+    text-decoration-color: #D1B5E0;  /* 밑줄 색상을 강제로 설정 */
+}
+
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -1617,7 +1620,7 @@ pre {
   .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: #D1B5E0;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
@@ -2271,27 +2274,27 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff; }
+  color: #D1B5E0;
+  border-color: #D1B5E0; }
   .btn-outline-primary:hover {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    color: #D1B5E0;
+    background-color: #D1B5E0;
+    border-color: #D1B5E0; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem #D1B5E0;
+    box-shadow: 0 0 0 0.2rem #D1B5E0; }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #007bff;
+    color: #D1B5E0;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    color: #D1B5E0;
+    background-color: #D1B5E0;
+    border-color: #D1B5E0; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+      -webkit-box-shadow: 0 0 0 0.2rem #D1B5E0;
+      box-shadow: 0 0 0 0.2rem #D1B5E0; }
 
 .btn-outline-secondary {
   color: #6c757d;
@@ -8268,7 +8271,8 @@ h1, h2, h3, h4, h5,
           bottom: 7px;
           left: 0;
           right: 0;
-          background-color: #1eafed;
+          /* 찾았다 */
+          background-color: #D1B5E0;
           visibility: hidden;
           -webkit-transform: scaleX(0);
           -moz-transform: scaleX(0);
@@ -8293,7 +8297,8 @@ h1, h2, h3, h4, h5,
       #colorlib-aside #colorlib-main-menu ul li.colorlib-active {
         font-weight: 600; }
         #colorlib-aside #colorlib-main-menu ul li.colorlib-active a {
-          color: #1eafed; }
+        /* 찾았다 */
+          color: #D1B5E0; }
           #colorlib-aside #colorlib-main-menu ul li.colorlib-active a:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
@@ -8329,7 +8334,8 @@ h1, h2, h3, h4, h5,
         #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input {
           padding-right: 40px;
           background: #fff !important;
-          border: 1px solid #7cd1f5 !important;
+          /* 찾았다 */
+          border: 1px solid #D1B5E0 !important;
           color: rgba(0, 0, 0, 0.4) !important;
           font-size: 14px;
           -webkit-border-radius: 0;
@@ -9294,3 +9300,43 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+.blog-entry {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.blog-entry .img {
+    width: 150px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.blog-entry .text {
+    flex: 1;
+}
+#hamburger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000; /* 사이드바보다 위에 표시 */
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#hamburger-btn i {
+    transition: transform 0.3s ease;
+}
+
+#colorlib-aside.show + #hamburger-btn i {
+    transform: rotate(90deg);
+}
+
