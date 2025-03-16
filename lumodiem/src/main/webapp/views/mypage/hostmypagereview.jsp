@@ -115,16 +115,16 @@
 	        													<c:choose>
 																	<c:when test="${not empty reviewList }">
 																	<ul style="text-align: center;">
+																		<c:set var="booleanTemp" value="false"/>
 																		<c:forEach var="list2" varStatus="vs2" items="${reviewList}">
-																			<c:set var="tf" value="false"/>
 																			<c:if test="${list1.klassNo eq list2.klassNo }">
-																				<c:set var="tf" value="true"/>
+																				<c:set var="booleanTemp" value="true"/>
 																				<li class="clickable-row" data-url="<c:url value='/reviewDetail?review_no=${list2.reviewNo}'/>">
 																					- 리뷰 제목: ${list2.reviewName}
 																				</li>
 																			</c:if>
 																		</c:forEach>
-																		<c:if test="${tf eq 'false' }">
+																		<c:if test="${booleanTemp eq 'false' }">
 																			<li>
 																				리뷰가 없습니다.
 																			</li>
